@@ -1,6 +1,6 @@
 const History = require("../models/history");
 
-const viewHistory = (req, res, next) => {
+exports.viewHistory = (req, res, next) => {
   History.find({}, (err, result) => {
     if (err) {
       res.send(err);
@@ -8,5 +8,3 @@ const viewHistory = (req, res, next) => {
     res.send(result);
   });
 };
-
-exports.viewHistory = viewHistory;

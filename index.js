@@ -26,7 +26,7 @@ app.use("/api/customers", customerRoutes);
 app.use("/api/history", historyRoutes);
 
 app.use((req, res, next) => {
-  const error = new httpError("Could not find this route.", 404);
+  const error = new Error("Could not find this route.");
   throw error;
 });
 

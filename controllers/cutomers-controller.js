@@ -1,7 +1,7 @@
 const Customer = require("../models/customer");
 const History = require("../models/history");
 
-const getAllCustomers = (req, res, next) => {
+exports.getAllCustomers = (req, res, next) => {
   Customer.find({}, (err, result) => {
     if (err) {
       res.send(err);
@@ -10,7 +10,7 @@ const getAllCustomers = (req, res, next) => {
   });
 };
 
-const getCustomerByName = (req, res, next) => {
+exports.getCustomerByName = (req, res, next) => {
   const { name } = req.params;
   Customer.findOne({ customerName: name }, (err, result) => {
     if (result) {
@@ -21,7 +21,7 @@ const getCustomerByName = (req, res, next) => {
   });
 };
 
-const moneyTransfer = (req, res, next) => {
+exports.moneyTransfer = (req, res, next) => {
   let sender = req.body.sender;
   let recipient = req.body.recipient;
   let amount = req.body.amount;
@@ -106,6 +106,3 @@ const moneyTransfer = (req, res, next) => {
   });
 };
 
-exports.getAllCustomers = getAllCustomers;
-exports.getCustomerByName = getCustomerByName;
-exports.moneyTransfer = moneyTransfer;
