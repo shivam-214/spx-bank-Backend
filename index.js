@@ -25,11 +25,6 @@ app.use((req, res, next) => {
 app.use("/api/customers", customerRoutes);
 app.use("/api/history", historyRoutes);
 
-app.use((req, res, next) => {
-  const error = new Error("Could not find this route.");
-  throw error;
-});
-
 app.use((error, req, res, next) => {
   if (res.headerSent) {
     return next(error);
