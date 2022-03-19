@@ -8,7 +8,7 @@ const historyRoutes = require("./routes/history-routes");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ methods: ["GET", "POST"] }));
+app.use(cors());
 
 app.use("/api/customers", customerRoutes);
 app.use("/api/history", historyRoutes);
