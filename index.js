@@ -1,5 +1,4 @@
 const express = require("express");
-const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -9,8 +8,7 @@ const historyRoutes = require("./routes/history-routes");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
-dotenv.config();
+app.use(cors({ methods: ["GET", "POST"] }));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

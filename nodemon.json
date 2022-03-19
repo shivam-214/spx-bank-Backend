@@ -1,0 +1,5 @@
+{
+  "env": {
+    "DB_URL": "mongodb+srv://spx-bank:spxbank123@cluster0.ptij5.mongodb.net/spxDB?retryWrites=true&w=majority"
+  }
+}
